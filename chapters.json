@@ -1,5 +1,11 @@
 [
   {
+    "id": "ch0",
+    "title": "Introductory Terms",
+    "file": "chapters/Ch0_Intro.md",
+    "description": "Intro Vocabulary and Terms"
+  },
+  {
     "id": "ch1",
     "title": "Electricity & Magnetism",
     "file": "chapters/Ch1_ElecMagnetism.md",
