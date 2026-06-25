@@ -1,0 +1,1 @@
+Put chapter-local images here, then reference them as images/file.png from Markdown.

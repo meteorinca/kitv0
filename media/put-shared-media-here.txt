@@ -1,0 +1,1 @@
+For shared media, use /media/file.png or media/file.png depending on hosting setup.

@@ -1,12 +1,13 @@
-# Electricity & Magnetism
+# Waves & Optics
 
-In the late 19th century, **James Clerk Maxwell** unified electricity and magnetism into a single theory.
+Put images right in the chapter:
 
-## Electric Charge
+![Wave interference sketch](images/wave-interference.png)
 
-Electric charge comes in two types: positive and negative.  
-Like charges repel, opposite charges attract.
+Use a hosted image too:
 
-```python
-# Coulomb's law
-F = k * q1 * q2 / r**2
+![Public sample image](https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Interference_of_two_waves.svg/640px-Interference_of_two_waves.svg.png)
+
+## A video
+
+::video[Two waves meeting](videos/waves.mp4)

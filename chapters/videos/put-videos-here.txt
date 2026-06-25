@@ -1,0 +1,1 @@
+Put chapter-local videos here, then reference them as videos/file.mp4 from Markdown.

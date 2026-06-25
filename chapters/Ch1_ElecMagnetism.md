@@ -1,12 +1,27 @@
 # Electricity & Magnetism
 
-In the late 19th century, **James Clerk Maxwell** unified electricity and magnetism into a single theory.
+Images work with normal Markdown:
 
-## Electric Charge
+![Electric field lines](images/electric-field-lines.png)
 
-Electric charge comes in two types: positive and negative.  
-Like charges repel, opposite charges attract.
+Because this chapter lives in `chapters/Ch1_ElecMagnetism.md`, that image path looks for:
 
-```python
-# Coulomb's law
-F = k * q1 * q2 / r**2
+`chapters/images/electric-field-lines.png`
+
+## Local video
+
+Use this short syntax:
+
+::video[Short demo of an LED circuit](videos/led-circuit-demo.mp4)
+
+That looks for:
+
+`chapters/videos/led-circuit-demo.mp4`
+
+## YouTube video
+
+::youtube[Crash Course style video placeholder](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+
+## Raw HTML also works
+
+<video controls preload="metadata" src="videos/another-demo.mp4"></video>

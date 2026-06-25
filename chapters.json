@@ -11,10 +11,10 @@
     "file": "chapters/Ch2_WavesOptics.md",
     "description": "Wave properties, interference, and optical instruments."
   },
-{
-  "id": "ch3",
-  "title": "Introduction to Quantum Mechanics",
-  "file": "chapters/Ch3_Quantum.md",
-  "description": "Wave-particle duality and the Schrödinger equation."
-}
+  {
+    "id": "ch3",
+    "title": "Introduction to Quantum Mechanics",
+    "file": "chapters/Ch3_Quantum.md",
+    "description": "Wave-particle duality and the Schr\u00f6dinger equation."
+  }
 ]
