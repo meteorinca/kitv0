@@ -12,7 +12,7 @@ Because this chapter lives in `chapters/Ch1_ElecMagnetism.md`, that image path l
 
 Use this short syntax:
 
-::video[Short demo of an LED circuit](videos/led-circuit-demo.mp4)
+::video[Short demo of an LED circuit](videos/staticelectricitydemo.mp4)
 
 That looks for:
 
