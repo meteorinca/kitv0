@@ -1,0 +1,20 @@
+[
+  {
+    "id": "ch1",
+    "title": "Electricity & Magnetism",
+    "file": "chapters/Ch1_ElecMagnetism.md",
+    "description": "Fundamentals of electric charge, fields, and magnetic forces."
+  },
+  {
+    "id": "ch2",
+    "title": "Waves & Optics",
+    "file": "chapters/Ch2_WavesOptics.md",
+    "description": "Wave properties, interference, and optical instruments."
+  },
+{
+  "id": "ch3",
+  "title": "Introduction to Quantum Mechanics",
+  "file": "chapters/Ch3_Quantum.md",
+  "description": "Wave-particle duality and the Schrödinger equation."
+}
+]
