@@ -14,6 +14,12 @@
 
   <!-- Markdown parser -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  
+  <!-- KaTeX for math rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+
   <script src="app.js" defer></script>
 </head>
 <body>
@@ -27,6 +33,9 @@
   </header>
 
   <main class="workspace">
+    <div class="progress-bar-container">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
     <nav class="sidebar" id="sidebar">
       <div class="sidebar-header">Chapters</div>
       <ul class="chapter-list" id="chapter-list"></ul>
@@ -40,7 +49,17 @@
       <div class="markdown-body" id="markdown-body">
         <div class="loading-placeholder">Select a chapter from the sidebar</div>
       </div>
+      <nav class="chapter-nav" id="chapter-nav" style="display: none;">
+        <button id="btn-prev">← Previous Chapter</button>
+        <button id="btn-next">Next Chapter →</button>
+      </nav>
     </article>
+
+    <!-- Table of Contents -->
+    <aside class="toc-panel" id="toc-panel">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list" id="toc-list"></ul>
+    </aside>
   </main>
 
   <footer class="status-bar" id="status-bar">

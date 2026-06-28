@@ -9,6 +9,12 @@
   const contentTitle = document.getElementById('content-title');
   const markdownBody = document.getElementById('markdown-body');
   const statusText = document.getElementById('status-text');
+  const contentPanel = document.getElementById('content-panel');
+  const progressBar = document.getElementById('progress-bar');
+  const tocList = document.getElementById('toc-list');
+  const chapterNav = document.getElementById('chapter-nav');
+  const btnPrev = document.getElementById('btn-prev');
+  const btnNext = document.getElementById('btn-next');
 
   async function init() {
     try {
@@ -93,8 +99,27 @@
       const preparedMarkdown = preprocessMediaShortcodes(markdown);
       const html = marked.parse(preparedMarkdown);
 
+      markdownBody.classList.remove('loaded');
       markdownBody.innerHTML = html;
       fixRelativeMediaPaths(markdownBody, chapter.file);
+      
+      if (window.renderMathInElement) {
+        window.renderMathInElement(markdownBody, {
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false}
+          ],
+          throwOnError: false
+        });
+      }
+
+      buildTOC();
+      updateChapterNav();
+
+      setTimeout(() => { markdownBody.classList.add('loaded'); }, 50);
+      contentPanel.scrollTop = 0;
+      updateProgress();
+
       statusText.textContent = `Displaying: ${chapter.title}`;
     } catch (err) {
       showError(err.message);
@@ -186,6 +211,87 @@
       return url;
     }
   }
+
+  function buildTOC() {
+    tocList.innerHTML = '';
+    const headings = markdownBody.querySelectorAll('h2, h3');
+    if (headings.length === 0) {
+      tocList.innerHTML = '<li><span class="toc-link" style="color:var(--text-tertiary)">No headings</span></li>';
+      return;
+    }
+
+    headings.forEach((heading, index) => {
+      if (!heading.id) {
+        heading.id = 'heading-' + index;
+      }
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#' + heading.id;
+      a.textContent = heading.textContent;
+      a.className = 'toc-link';
+      if (heading.tagName.toLowerCase() === 'h3') {
+        a.classList.add('toc-h3');
+      }
+      
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        heading.scrollIntoView({ behavior: 'smooth' });
+      });
+
+      li.appendChild(a);
+      tocList.appendChild(li);
+    });
+  }
+
+  function updateChapterNav() {
+    const currentIndex = chapters.findIndex(c => c.id === activeChapterId);
+    if (currentIndex === -1) {
+      chapterNav.style.display = 'none';
+      return;
+    }
+    
+    chapterNav.style.display = 'flex';
+    
+    const prevChapter = chapters[currentIndex - 1];
+    const nextChapter = chapters[currentIndex + 1];
+
+    if (prevChapter) {
+      btnPrev.disabled = false;
+      btnPrev.textContent = `← ${prevChapter.title}`;
+      btnPrev.onclick = () => loadChapter(prevChapter.id);
+    } else {
+      btnPrev.disabled = true;
+      btnPrev.textContent = '← Previous';
+      btnPrev.onclick = null;
+    }
+
+    if (nextChapter) {
+      btnNext.disabled = false;
+      btnNext.textContent = `${nextChapter.title} →`;
+      btnNext.onclick = () => loadChapter(nextChapter.id);
+    } else {
+      btnNext.disabled = true;
+      btnNext.textContent = 'Next →';
+      btnNext.onclick = null;
+    }
+  }
+
+  function updateProgress() {
+    const scrollTop = contentPanel.scrollTop;
+    const scrollHeight = contentPanel.scrollHeight;
+    const clientHeight = contentPanel.clientHeight;
+    const maxScroll = scrollHeight - clientHeight;
+    
+    if (maxScroll > 0) {
+      const progress = (scrollTop / maxScroll) * 100;
+      progressBar.style.width = `${progress}%`;
+    } else {
+      progressBar.style.width = '100%';
+    }
+  }
+
+  // Scroll listener for progress bar
+  contentPanel.addEventListener('scroll', updateProgress);
 
   function updateActiveLink() {
     document.querySelectorAll('.chapter-link').forEach(link => {
