@@ -85,18 +85,24 @@
       num.className = 'chapter-link-num';
       num.textContent = String(idx).padStart(2, '0');
 
-      const text = document.createTextNode(chapter.title);
+      const textWrapper = document.createElement('div');
+      textWrapper.className = 'chapter-text-content';
 
-      link.appendChild(num);
-      link.appendChild(text);
-      item.appendChild(link);
+      const titleEl = document.createElement('div');
+      titleEl.className = 'chapter-title';
+      titleEl.textContent = chapter.title;
+      textWrapper.appendChild(titleEl);
 
       if (chapter.description) {
-        const desc = document.createElement('span');
+        const desc = document.createElement('div');
         desc.className = 'chapter-desc';
         desc.textContent = chapter.description;
-        item.appendChild(desc);
+        textWrapper.appendChild(desc);
       }
+
+      link.appendChild(num);
+      link.appendChild(textWrapper);
+      item.appendChild(link);
 
       chapterList.appendChild(item);
     });

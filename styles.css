@@ -4,47 +4,47 @@
    ============================================================ */
 
 :root {
-  /* Backgrounds — warm dark, not cold dark */
-  --bg-deep:       #08090f;
-  --bg-primary:    #0c0e18;
-  --bg-secondary:  #10121f;
-  --bg-elevated:   #161926;
-  --bg-surface:    #1c2035;
-  --bg-hover:      #222640;
+  /* Backgrounds — warm light theme (Scale 0 / Size of Life) */
+  --bg-deep:       #f5f0e8;
+  --bg-primary:    #faf7f2;
+  --bg-secondary:  #f0e9df;
+  --bg-elevated:   #fffcf7;
+  --bg-surface:    #e8e0d5;
+  --bg-hover:      #eae1d3;
 
   /* Accent palette */
-  --teal:          #22d1c3;
-  --teal-dim:      #1a9e94;
-  --teal-glow:     rgba(34, 209, 195, 0.2);
-  --gold:          #f5c842;
-  --gold-dim:      #c9a535;
-  --gold-glow:     rgba(245, 200, 66, 0.15);
-  --green:         #4ade80;
-  --red:           #f87171;
-  --purple:        #a78bfa;
-  --blue:          #60a5fa;
+  --teal:          #169c91;
+  --teal-dim:      #138279;
+  --teal-glow:     rgba(22, 156, 145, 0.15);
+  --gold:          #d9a01c;
+  --gold-dim:      #b58414;
+  --gold-glow:     rgba(217, 160, 28, 0.15);
+  --green:         #2ea055;
+  --red:           #d94141;
+  --purple:        #7e5bcc;
+  --blue:          #3b82f6;
 
   /* Scale colors (each scale has a personality) */
-  --scale-0: #f5c842;
-  --scale-1: #22d1c3;
-  --scale-2: #4ade80;
-  --scale-3: #a78bfa;
-  --scale-4: #f5a442;
-  --scale-5: #f87171;
+  --scale-0: #d9a01c;
+  --scale-1: #169c91;
+  --scale-2: #2ea055;
+  --scale-3: #7e5bcc;
+  --scale-4: #d9771c;
+  --scale-5: #d94141;
 
   /* Text */
-  --text-primary:   #ede8df;
-  --text-secondary: #9a9485;
-  --text-tertiary:  #5e5a54;
-  --text-muted:     #3a3830;
+  --text-primary:   #2c2a26;
+  --text-secondary: #5e5a54;
+  --text-tertiary:  #8b857a;
+  --text-muted:     #b8b2a5;
 
   /* Borders */
-  --border:         rgba(255, 248, 230, 0.07);
-  --border-active:  rgba(34, 209, 195, 0.3);
+  --border:         rgba(0, 0, 0, 0.08);
+  --border-active:  rgba(22, 156, 145, 0.3);
 
   /* Fonts */
-  --font-serif:  'Playfair Display', Georgia, serif;
-  --font-sans:   'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif:  'Lora', Georgia, serif;
+  --font-sans:   'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono:   'JetBrains Mono', 'Fira Code', monospace;
 
   /* Layout */
@@ -361,10 +361,10 @@ a { color: var(--teal); text-decoration: none; }
 .chapter-link {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
-  padding: 10px 12px;
+  gap: 12px;
+  padding: 12px 14px;
   border-radius: var(--radius-md);
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 500;
   color: var(--text-secondary);
   transition: all 0.2s;
@@ -374,11 +374,11 @@ a { color: var(--teal); text-decoration: none; }
 
 .chapter-link-num {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: var(--text-muted);
   flex-shrink: 0;
-  padding-top: 1px;
+  padding-top: 2px;
   transition: color 0.2s;
   min-width: 18px;
 }
@@ -396,12 +396,21 @@ a { color: var(--teal); text-decoration: none; }
 }
 .chapter-link.active .chapter-link-num { color: var(--teal); }
 
+.chapter-text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.chapter-title {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
 .chapter-desc {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   color: var(--text-tertiary);
-  margin: -2px 0 2px 34px;
   line-height: 1.4;
-  padding-bottom: 4px;
 }
 
 /* Main content */
@@ -596,14 +605,14 @@ a { color: var(--teal); text-decoration: none; }
 .markdown-body code {
   font-family: var(--font-mono);
   font-size: 0.88em;
-  background: rgba(255,255,255, 0.06);
+  background: rgba(0, 0, 0, 0.06);
   padding: 2px 6px;
   border-radius: var(--radius-sm);
   color: var(--teal);
 }
 
 .markdown-body pre {
-  background: #060810;
+  background: #fbf9f6;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 20px 24px;
@@ -645,7 +654,7 @@ a { color: var(--teal); text-decoration: none; }
   color: var(--text-secondary);
 }
 .markdown-body tr:last-child td { border-bottom: none; }
-.markdown-body tr:hover td { background: rgba(255,255,255,0.02); }
+.markdown-body tr:hover td { background: rgba(0,0,0,0.03); }
 
 /* Lists */
 .markdown-body ul, .markdown-body ol {
