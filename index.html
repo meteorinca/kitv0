@@ -3,18 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mission Log – Articles</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>" />
+  <title>Scale — A Course in Computing</title>
+  <meta name="description" content="A Size-of-Life inspired journey through the scales of computing. From one bit to full systems." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⬡</text></svg>" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
 
   <!-- Markdown parser -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  
+
   <!-- KaTeX for math rendering -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
@@ -23,47 +24,89 @@
   <script src="app.js" defer></script>
 </head>
 <body>
-  <header class="top-nav">
-    <div class="nav-brand">
-      <span class="nav-logo">📖</span>
-      <span class="nav-title">Mission Log</span>
-      <span class="nav-subtitle">Articles & Notes</span>
-    </div>
-    <div></div>
-  </header>
 
-  <main class="workspace">
-    <div class="progress-bar-container">
-      <div class="progress-bar" id="progress-bar"></div>
+  <!-- Landing / Entry Screen -->
+  <div id="landing" class="landing">
+    <div class="landing-corner landing-corner-tl">
+      <div class="corner-label">Scale 0</div>
+      <div class="corner-desc">The Spark</div>
     </div>
-    <nav class="sidebar" id="sidebar">
-      <div class="sidebar-header">Chapters</div>
-      <ul class="chapter-list" id="chapter-list"></ul>
-    </nav>
+    <div class="landing-corner landing-corner-tr">
+      <div class="corner-label">Scale 5</div>
+      <div class="corner-desc">Systems</div>
+    </div>
+    <div class="landing-corner landing-corner-bl">
+      <div class="corner-label">Bits</div>
+      <div class="corner-desc">Variables</div>
+    </div>
+    <div class="landing-corner landing-corner-br">
+      <div class="corner-label">Loops</div>
+      <div class="corner-desc">Sensors</div>
+    </div>
 
-    <article class="content-panel" id="content-panel">
-      <div class="content-header">
-        <h1 class="content-title" id="content-title"></h1>
+    <div class="landing-center">
+      <p class="landing-byline">A course in computing</p>
+      <h1 class="landing-title">Scale</h1>
+      <p class="landing-subtitle">You will see how small pieces become real systems.</p>
+      <button class="landing-btn" id="btn-enter" onclick="enterCourse()">Enter →</button>
+    </div>
+
+    <div class="landing-lines" aria-hidden="true">
+      <div class="h-line"></div>
+      <div class="v-line"></div>
+    </div>
+  </div>
+
+  <!-- Main App -->
+  <div id="app" class="app" style="display:none;">
+    <header class="top-nav">
+      <div class="nav-brand">
+        <button class="nav-home-btn" id="btn-home" title="Return to title screen">⬡</button>
+        <span class="nav-title">Scale</span>
+        <span class="nav-sep">·</span>
+        <span class="nav-subtitle" id="nav-chapter-label">A Course in Computing</span>
+      </div>
+      <div class="nav-right">
+        <div class="scale-dots" id="scale-dots"></div>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <div class="progress-bar-container">
+        <div class="progress-bar" id="progress-bar"></div>
       </div>
 
-      <div class="markdown-body" id="markdown-body">
-        <div class="loading-placeholder">Select a chapter from the sidebar</div>
-      </div>
-      <nav class="chapter-nav" id="chapter-nav" style="display: none;">
-        <button id="btn-prev">← Previous Chapter</button>
-        <button id="btn-next">Next Chapter →</button>
+      <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">Scales</div>
+        <ul class="chapter-list" id="chapter-list"></ul>
       </nav>
-    </article>
 
-    <!-- Table of Contents -->
-    <aside class="toc-panel" id="toc-panel">
-      <div class="toc-title">On this page</div>
-      <ul class="toc-list" id="toc-list"></ul>
-    </aside>
-  </main>
+      <article class="content-panel" id="content-panel">
+        <div class="content-header" id="content-header">
+          <div class="scale-badge" id="scale-badge"></div>
+          <h1 class="content-title" id="content-title"></h1>
+          <p class="content-desc" id="content-desc"></p>
+        </div>
 
-  <footer class="status-bar" id="status-bar">
-    <span id="status-text">Ready</span>
-  </footer>
+        <div class="markdown-body" id="markdown-body">
+          <div class="loading-placeholder">Select a scale from the sidebar</div>
+        </div>
+
+        <nav class="chapter-nav" id="chapter-nav" style="display: none;">
+          <button id="btn-prev">← Previous</button>
+          <button id="btn-next">Next →</button>
+        </nav>
+      </article>
+
+      <aside class="toc-panel" id="toc-panel">
+        <div class="toc-title">On this page</div>
+        <ul class="toc-list" id="toc-list"></ul>
+      </aside>
+    </main>
+
+    <footer class="status-bar" id="status-bar">
+      <span id="status-text">Ready</span>
+    </footer>
+  </div>
 </body>
 </html>

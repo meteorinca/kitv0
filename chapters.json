@@ -1,26 +1,38 @@
 [
   {
-    "id": "ch0",
-    "title": "Introductory Terms",
-    "file": "chapters/Ch0_Intro.md",
-    "description": "Intro Vocabulary and Terms"
+    "id": "scale0",
+    "title": "Scale 0: The Spark",
+    "file": "chapters/Scale0_Intro.md",
+    "description": "What is a computer? From electromagnetism to the first instruction."
   },
   {
-    "id": "ch1",
-    "title": "Electricity & Magnetism",
-    "file": "chapters/Ch1_ElecMagnetism.md",
-    "description": "Fundamentals of electric charge, fields, and magnetic forces."
+    "id": "scale1",
+    "title": "Scale 1: Bits & Variables",
+    "file": "chapters/Scale1_Bits.md",
+    "description": "One switch. One light. One variable that changes everything."
   },
   {
-    "id": "ch2",
-    "title": "Waves & Optics",
-    "file": "chapters/Ch2_WavesOptics.md",
-    "description": "Wave properties, interference, and optical instruments."
+    "id": "scale2",
+    "title": "Scale 2: Logic & Decisions",
+    "file": "chapters/Scale2_Logic.md",
+    "description": "YES or NO. How computers make every choice, every time."
   },
   {
-    "id": "ch3",
-    "title": "Introduction to Quantum Mechanics",
-    "file": "chapters/Ch3_Quantum.md",
-    "description": "Wave-particle duality and the Schr\u00f6dinger equation."
+    "id": "scale3",
+    "title": "Scale 3: Loops & Debugging",
+    "file": "chapters/Scale3_Loops.md",
+    "description": "Repeat until right. The art of iteration and squashing bugs."
+  },
+  {
+    "id": "scale4",
+    "title": "Scale 4: Sensors & Data",
+    "file": "chapters/Scale4_Sensors.md",
+    "description": "The world as input. Reading, measuring, and responding."
+  },
+  {
+    "id": "scale5",
+    "title": "Scale 5: Systems & Projects",
+    "file": "chapters/Scale5_Systems.md",
+    "description": "Small pieces become real tools. Build something that matters."
   }
 ]
