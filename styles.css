@@ -748,5 +748,21 @@ a { color: var(--teal); text-decoration: none; }
   .content-panel { padding: 24px 18px 40px; }
   .content-title { font-size: 1.8rem; }
   .nav-subtitle { display: none; }
+
+/* ── Floating image animation ── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+
+.markdown-body img.float-image {
+  animation: float 4s ease-in-out infinite;
+  display: inline-block;
+  max-width: 60%;
+  margin: 1.5rem auto;
+  border-radius: 0;
+  box-shadow: none;
+}
+
   .landing-title { font-size: 18vw; }
 }

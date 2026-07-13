@@ -44,6 +44,9 @@ The balloon steals electrons from your hair, becoming negatively charged. The wa
 
 This is how computing begins: with charge, and what charge does.
 
+<img class="float-image" src="images/telegraph.png" alt="An antique telegraph machine — dots and dashes traveling across copper wire">
+
+
 ---
 
 ## 2. From little electrons to big computers
@@ -90,11 +93,16 @@ Read the written bits backward
 
 To get binary to do math with big numbers, we needed lots of on/off switches. We're talking millions, and eventually billions of them!
 
+
+<img class="float-image" src="images/vactube.png" alt="A glowing antique vacuum tube — glass bulb with metal wires, the predecessor to the transistor">
+
 ## The invention of the transistor
 
 This is where one of the most important inventions of all time comes in: the transistor! 
 
 ![Transistor](images/transistor.jpg)
+
+<img class="float-image" src="images/transistor.png" alt="A single crisp copper wire meeting a modern transistor — the switch that changed everything">
 
 It is a much fancier and much much smaller on/off switch. How small is it?
 

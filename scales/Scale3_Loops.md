@@ -181,6 +181,9 @@ Look at the `for` loop inside `tick()`. It lights each LED by index number — t
 
 ---
 
+
+<img class="float-image" src="images/mothbug.png" alt="A preserved moth pinned to a card — the original computer bug, found by Grace Hopper in 1947">
+
 ## 🐛 Debugging: The Art of Finding What Went Wrong
 
 A *bug* is when the program runs but does something unexpected. Debugging is the skill of finding the gap between what you *said* and what you *meant*.
