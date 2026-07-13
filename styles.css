@@ -347,18 +347,18 @@ a { color: var(--teal); text-decoration: none; }
   color: var(--text-tertiary);
 }
 
-.chapter-list {
+.scale-list {
   list-style: none;
   padding: 0 10px 20px;
 }
 
-.chapter-item {
+.scale-item {
   display: flex;
   flex-direction: column;
   margin-bottom: 4px;
 }
 
-.chapter-link {
+.scale-link {
   display: flex;
   align-items: flex-start;
   gap: 12px;
@@ -372,7 +372,7 @@ a { color: var(--teal); text-decoration: none; }
   line-height: 1.35;
 }
 
-.chapter-link-num {
+.scale-link-num {
   font-family: var(--font-mono);
   font-size: 0.8rem;
   font-weight: 600;
@@ -383,31 +383,31 @@ a { color: var(--teal); text-decoration: none; }
   min-width: 18px;
 }
 
-.chapter-link:hover {
+.scale-link:hover {
   background: var(--bg-hover);
   color: var(--text-primary);
 }
-.chapter-link:hover .chapter-link-num { color: var(--teal); }
+.scale-link:hover .scale-link-num { color: var(--teal); }
 
-.chapter-link.active {
+.scale-link.active {
   background: var(--bg-elevated);
   color: var(--teal);
   box-shadow: inset 0 0 0 1px var(--border-active);
 }
-.chapter-link.active .chapter-link-num { color: var(--teal); }
+.scale-link.active .scale-link-num { color: var(--teal); }
 
-.chapter-text-content {
+.scale-text-content {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
 
-.chapter-title {
+.scale-title {
   color: var(--text-primary);
   font-weight: 600;
 }
 
-.chapter-desc {
+.scale-desc {
   font-size: 0.75rem;
   color: var(--text-tertiary);
   line-height: 1.4;
@@ -502,8 +502,8 @@ a { color: var(--teal); text-decoration: none; }
 .toc-link.active { color: var(--teal); font-weight: 600; }
 .toc-h3 { margin-left: 10px; font-size: 0.72rem; color: var(--text-muted); }
 
-/* Chapter nav */
-.chapter-nav {
+/* Scale nav */
+.scale-nav {
   margin-top: 56px;
   padding-top: 24px;
   border-top: 1px solid var(--border);
@@ -511,7 +511,7 @@ a { color: var(--teal); text-decoration: none; }
   justify-content: space-between;
   gap: 16px;
 }
-.chapter-nav button {
+.scale-nav button {
   padding: 12px 20px;
   background: var(--bg-surface);
   border: 1px solid var(--border);
@@ -524,12 +524,12 @@ a { color: var(--teal); text-decoration: none; }
   text-align: center;
   font-family: var(--font-sans);
 }
-.chapter-nav button:hover:not(:disabled) {
+.scale-nav button:hover:not(:disabled) {
   background: var(--bg-hover);
   border-color: var(--teal-dim);
   color: var(--teal);
 }
-.chapter-nav button:disabled {
+.scale-nav button:disabled {
   opacity: 0.35;
   cursor: not-allowed;
 }

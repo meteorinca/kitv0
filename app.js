@@ -1,12 +1,12 @@
 (() => {
-  const MANIFEST_URL = 'chapters.json';
+  const MANIFEST_URL = 'scales.json';
 
-  let chapters = [];
-  let activeChapterId = null;
+  let scales = [];
+  let activeScaleId = null;
   let visitedIds = new Set();
 
   // DOM refs (app shell)
-  const chapterList   = document.getElementById('chapter-list');
+  const scaleList   = document.getElementById('scale-list');
   const contentTitle  = document.getElementById('content-title');
   const contentDesc   = document.getElementById('content-desc');
   const scaleBadge    = document.getElementById('scale-badge');
@@ -15,11 +15,11 @@
   const contentPanel  = document.getElementById('content-panel');
   const progressBar   = document.getElementById('progress-bar');
   const tocList       = document.getElementById('toc-list');
-  const chapterNav    = document.getElementById('chapter-nav');
+  const scaleNav    = document.getElementById('scale-nav');
   const btnPrev       = document.getElementById('btn-prev');
   const btnNext       = document.getElementById('btn-next');
   const scaleDots     = document.getElementById('scale-dots');
-  const navLabel      = document.getElementById('nav-chapter-label');
+  const navLabel      = document.getElementById('nav-scale-label');
   const appEl         = document.getElementById('app');
   const landingEl     = document.getElementById('landing');
   const btnHome       = document.getElementById('btn-home');
@@ -47,21 +47,21 @@
       const resp = await fetch(MANIFEST_URL);
       if (!resp.ok) throw new Error(`Manifest fetch failed: ${resp.status}`);
 
-      chapters = await resp.json();
-      if (!chapters.length) throw new Error('No chapters found');
+      scales = await resp.json();
+      if (!scales.length) throw new Error('No scales found');
 
       renderSidebar();
       renderScaleDots();
 
       const hash = window.location.hash.replace('#', '');
       const target =
-        chapters.find(ch => ch.id === hash) ||
-        chapters[0];
+        scales.find(ch => s.id === hash) ||
+        scales[0];
 
-      await loadChapter(target.id);
+      await loadScale(target.id);
       window.addEventListener('hashchange', onHashChange);
 
-      statusText.textContent = `${chapters.length} scales loaded`;
+      statusText.textContent = `${scales.length} scales loaded`;
     } catch (err) {
       showError(err.message);
       statusText.textContent = 'Error loading manifest';
@@ -69,34 +69,34 @@
     }
   }
 
-  // ── Sidebar ───────────────────────────────────────────────
+  // ── Scale list (sidebar) ───────────────────────────────────────────────
   function renderSidebar() {
-    chapterList.innerHTML = '';
-    chapters.forEach((chapter, idx) => {
+    scaleList.innerHTML = '';
+    scales.forEach((scale, idx) => {
       const item = document.createElement('li');
-      item.className = 'chapter-item';
+      item.className = 'scale-item';
 
       const link = document.createElement('a');
-      link.href = `#${chapter.id}`;
-      link.className = 'chapter-link';
-      link.dataset.id = chapter.id;
+      link.href = `#${scale.id}`;
+      link.className = 'scale-link';
+      link.dataset.id = scale.id;
 
       const num = document.createElement('span');
-      num.className = 'chapter-link-num';
+      num.className = 'scale-link-num';
       num.textContent = String(idx).padStart(2, '0');
 
       const textWrapper = document.createElement('div');
-      textWrapper.className = 'chapter-text-content';
+      textWrapper.className = 'scale-text-content';
 
       const titleEl = document.createElement('div');
-      titleEl.className = 'chapter-title';
-      titleEl.textContent = chapter.title;
+      titleEl.className = 'scale-title';
+      titleEl.textContent = scale.title;
       textWrapper.appendChild(titleEl);
 
-      if (chapter.description) {
+      if (scale.description) {
         const desc = document.createElement('div');
-        desc.className = 'chapter-desc';
-        desc.textContent = chapter.description;
+        desc.className = 'scale-desc';
+        desc.textContent = scale.description;
         textWrapper.appendChild(desc);
       }
 
@@ -104,19 +104,19 @@
       link.appendChild(textWrapper);
       item.appendChild(link);
 
-      chapterList.appendChild(item);
+      scaleList.appendChild(item);
     });
   }
 
   // ── Scale Dots ────────────────────────────────────────────
   function renderScaleDots() {
     scaleDots.innerHTML = '';
-    chapters.forEach(ch => {
+    scales.forEach(s => {
       const dot = document.createElement('div');
       dot.className = 'scale-dot';
-      dot.dataset.id = ch.id;
-      dot.title = ch.title;
-      dot.addEventListener('click', () => loadChapter(ch.id));
+      dot.dataset.id = s.id;
+      dot.title = s.title;
+      dot.addEventListener('click', () => loadScale(s.id));
       scaleDots.appendChild(dot);
     });
   }
@@ -124,47 +124,47 @@
   function updateScaleDots() {
     scaleDots.querySelectorAll('.scale-dot').forEach(dot => {
       const id = dot.dataset.id;
-      dot.classList.toggle('active', id === activeChapterId);
-      dot.classList.toggle('visited', visitedIds.has(id) && id !== activeChapterId);
+      dot.classList.toggle('active', id === activeScaleId);
+      dot.classList.toggle('visited', visitedIds.has(id) && id !== activeScaleId);
     });
   }
 
-  // ── Load Chapter ──────────────────────────────────────────
-  async function loadChapter(id) {
-    const chapter = chapters.find(ch => ch.id === id);
-    if (!chapter) return;
+  // ── Load Scale ─────────────────────────────────────────────
+  async function loadScale(id) {
+    const scale = scales.find(s => s.id === id);
+    if (!scale) return;
 
-    activeChapterId = chapter.id;
-    visitedIds.add(chapter.id);
+    activeScaleId = scale.id;
+    visitedIds.add(scale.id);
 
-    if (window.location.hash !== `#${chapter.id}`) {
-      window.location.hash = chapter.id;
+    if (window.location.hash !== `#${scale.id}`) {
+      window.location.hash = scale.id;
     }
 
     updateActiveLink();
     updateScaleDots();
 
     // Set header
-    const idx = chapters.indexOf(chapter);
+    const idx = scales.indexOf(scale);
     scaleBadge.textContent = `Scale ${idx}`;
-    contentTitle.textContent = chapter.title.replace(/^Scale \d+[–—-]\s*/i, '');
-    contentDesc.textContent = chapter.description || '';
-    navLabel.textContent = chapter.title;
+    contentTitle.textContent = scale.title.replace(/^Scale \d+[–—-]\s*/i, '');
+    contentDesc.textContent = scale.description || '';
+    navLabel.textContent = scale.title;
 
     markdownBody.classList.remove('loaded');
     markdownBody.innerHTML = '<div class="loading-placeholder">Loading…</div>';
     statusText.textContent = `Fetching scale ${idx}…`;
 
     try {
-      const resp = await fetch(chapter.file);
-      if (!resp.ok) throw new Error(`Failed to load ${chapter.file} (${resp.status})`);
+      const resp = await fetch(scale.file);
+      if (!resp.ok) throw new Error(`Failed to load ${scale.file} (${resp.status})`);
 
       const markdown = await resp.text();
       const prepared = preprocessMediaShortcodes(markdown);
       const html = marked.parse(prepared);
 
       markdownBody.innerHTML = html;
-      fixRelativeMediaPaths(markdownBody, chapter.file);
+      fixRelativeMediaPaths(markdownBody, scale.file);
 
       if (window.renderMathInElement) {
         window.renderMathInElement(markdownBody, {
@@ -177,16 +177,16 @@
       }
 
       buildTOC();
-      updateChapterNav();
+      updateScaleNav();
 
       setTimeout(() => { markdownBody.classList.add('loaded'); }, 50);
       contentPanel.scrollTop = 0;
       updateProgress();
 
-      statusText.textContent = `Scale ${idx} — ${chapter.title}`;
+      statusText.textContent = `Scale ${idx} — ${scale.title}`;
     } catch (err) {
       showError(err.message);
-      statusText.textContent = 'Error loading chapter';
+      statusText.textContent = 'Error loading scale';
       console.error(err);
     }
   }
@@ -270,19 +270,19 @@
     });
   }
 
-  // ── Chapter nav ───────────────────────────────────────────
-  function updateChapterNav() {
-    const idx = chapters.findIndex(c => c.id === activeChapterId);
-    if (idx === -1) { chapterNav.style.display = 'none'; return; }
+  // ── Scale nav ──────────────────────────────────────────────
+  function updateScaleNav() {
+    const idx = scales.findIndex(c => c.id === activeScaleId);
+    if (idx === -1) { scaleNav.style.display = 'none'; return; }
 
-    chapterNav.style.display = 'flex';
-    const prev = chapters[idx - 1];
-    const next = chapters[idx + 1];
+    scaleNav.style.display = 'flex';
+    const prev = scales[idx - 1];
+    const next = scales[idx + 1];
 
     if (prev) {
       btnPrev.disabled = false;
       btnPrev.textContent = `← ${prev.title}`;
-      btnPrev.onclick = () => loadChapter(prev.id);
+      btnPrev.onclick = () => loadScale(prev.id);
     } else {
       btnPrev.disabled = true;
       btnPrev.textContent = '← Previous';
@@ -292,7 +292,7 @@
     if (next) {
       btnNext.disabled = false;
       btnNext.textContent = `${next.title} →`;
-      btnNext.onclick = () => loadChapter(next.id);
+      btnNext.onclick = () => loadScale(next.id);
     } else {
       btnNext.disabled = true;
       btnNext.textContent = 'Next →';
@@ -310,23 +310,23 @@
 
   // ── Active link ───────────────────────────────────────────
   function updateActiveLink() {
-    document.querySelectorAll('.chapter-link').forEach(link => {
-      link.classList.toggle('active', link.dataset.id === activeChapterId);
+    document.querySelectorAll('.scale-link').forEach(link => {
+      link.classList.toggle('active', link.dataset.id === activeScaleId);
     });
   }
 
   function onHashChange() {
     const hash = window.location.hash.replace('#', '');
-    if (hash && chapters.some(ch => ch.id === hash)) loadChapter(hash);
+    if (hash && scales.some(ch => s.id === hash)) loadScale(hash);
   }
 
   // ── Sidebar clicks ────────────────────────────────────────
-  chapterList.addEventListener('click', e => {
-    const link = e.target.closest('.chapter-link');
+  scaleList.addEventListener('click', e => {
+    const link = e.target.closest('.scale-link');
     if (!link) return;
     e.preventDefault();
     const id = link.dataset.id;
-    if (id) loadChapter(id);
+    if (id) loadScale(id);
   });
 
   // ── Error ─────────────────────────────────────────────────

@@ -50,12 +50,6 @@ This is how computing begins: with charge, and what charge does.
 
 Now that we know for sure that electric fields are real and all around us, let's get into how we use them to make computers.
 
-Let's start with a bit of history. The oldest known mechanical computer is believed to be the Antikythera mechanism, discovered in a shipwreck off the coast of Greece in 1901. It is an ancient Greek analog computer designed to calculate the positions of planets and predict eclipses. It is older than 2000 years!
-
-::video[How the Antikythera mechanism works](videos/antikythera.mp4)
-
-So humans have been using levers and gears to make computing devices for over 2000 years. But that's all mechanical. How do we use electromagnetism to make computers?
-
 Think of electricity as water flowing through pipes. A computer uses electric current to control the flow of "water" through a circuit. By controlling the flow of electricity, we can create on/off switches that can be used to perform calculations.
 
 ### Binary
@@ -117,8 +111,6 @@ Congratulations. You just built the first logic gate called the NOT gate (also k
 What is it's algorithm?
 
 Hint: If I sees 1, I say 0. If I sees 0, I say 1.
-
-[Will add diagram]
 
 
 
