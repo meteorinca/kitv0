@@ -1,6 +1,46 @@
 # Scale 0 — The Spark
 *From Electromagnetism to the First Instruction*
 
+<style>
+    img.float-right {
+        float: right;
+        margin: 0.5rem 0 1.5rem 1.5rem;
+        max-width: 35%;
+        border-radius: 12px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        animation: breathe-float 6s ease-in-out infinite;
+    }
+    img.float-left {
+        float: left;
+        margin: 0.5rem 1.5rem 1.5rem 0;
+        max-width: 35%;
+        border-radius: 12px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        animation: breathe-float-reverse 7s ease-in-out infinite;
+    }
+    img.float-transparent {
+        float: right;
+        margin: 0.5rem 0 1.5rem 1.5rem;
+        max-width: 35%;
+        filter: drop-shadow(0 15px 20px rgba(0,0,0,0.15));
+        animation: breathe-float 5.5s ease-in-out infinite;
+    }
+    img.float-transparent.left {
+        float: left;
+        margin: 0.5rem 1.5rem 1.5rem 0;
+        animation: breathe-float-reverse 6.5s ease-in-out infinite;
+    }
+    @keyframes breathe-float {
+        0%, 100% { transform: translateY(0) scale(1) rotate(0deg); }
+        50% { transform: translateY(-8px) scale(1.02) rotate(1deg); }
+    }
+    @keyframes breathe-float-reverse {
+        0%, 100% { transform: translateY(0) scale(1) rotate(0deg); }
+        50% { transform: translateY(-8px) scale(1.02) rotate(-1deg); }
+    }
+    .clear { clear: both; }
+</style>
+
 > *Before anything runs, something has to move.*
 
 Hopefully, you got Paulbot the dogbot working and runnin' around.
@@ -14,7 +54,7 @@ We have to start from the ultimate question. What is the nature of the universe 
 According to our current understanding, there are 4 fundamental forces in the universe. Gravity, electromagnetism, the strong nuclear force, and the weak nuclear force. 
 
 
-![Four fundamental forces of the universe](images/four_forces.png)
+<img class="float-transparent left" src="images/fourfources.png" alt="Four fundamental forces of the universe">
 
 For our purposes, we are only concerned with the force of electromagnetism. 
 
@@ -38,13 +78,13 @@ Rub a balloon on your hair. Hold it near a thin stream of water from a tap. You 
 
 That bending is not magic (well, maybe a bit!) It is the same force (or field, depending on how you look at it) that runs every computer on Earth: **electromagnetism**.
 
-::image[Charged Balloon deflecting a stream of water](images/waterballoon.jpg)
+<img class="float-right" src="images/waterballoon.jpg" alt="Charged Balloon deflecting a stream of water">
 
 The balloon steals electrons from your hair, becoming negatively charged. The water molecules, which are slightly positive on one side and negative on the other, are attracted to that charge (as seen in the image). An invisible force field reaches across space and bends a liquid. This is the universe’s fundamental messaging system: charge in motion.
 
 This is how computing begins: with charge, and what charge does.
 
-<img class="float-image" src="images/telegraph.png" alt="An antique telegraph machine — dots and dashes traveling across copper wire">
+<img class="float-transparent right" src="images/telegraph.png" alt="An antique telegraph machine — dots and dashes traveling across copper wire">
 
 
 ---
@@ -94,15 +134,15 @@ Read the written bits backward
 To get binary to do math with big numbers, we needed lots of on/off switches. We're talking millions, and eventually billions of them!
 
 
-<img class="float-image" src="images/vactube.png" alt="A glowing antique vacuum tube — glass bulb with metal wires, the predecessor to the transistor">
+<img class="float-transparent left" src="images/vactube.png" alt="A glowing antique vacuum tube — glass bulb with metal wires, the predecessor to the transistor">
 
 ## The invention of the transistor
 
 This is where one of the most important inventions of all time comes in: the transistor! 
 
-![Transistor](images/transistor.jpg)
+<img class="float-right" src="images/transistor.jpg" alt="Transistor">
 
-<img class="float-image" src="images/transistor.png" alt="A single crisp copper wire meeting a modern transistor — the switch that changed everything">
+<img class="float-transparent left" src="images/transistor.png" alt="A single crisp copper wire meeting a modern transistor — the switch that changed everything">
 
 It is a much fancier and much much smaller on/off switch. How small is it?
 
@@ -132,7 +172,7 @@ That substitute teacher is a CPU. The class manual is a program. The students ar
 
 A computer is not smart. It follows a manual — precisely, obediently, incredibly fast. Every game, every website, every AI you've used was written as instructions in a manual that a "substitute teacher" followed, step by step, billions of times per second.
 
-![A magnifying glass revealing a circuit board, wires spreading outward like a map](images/scale0_computer.png)
+<img class="float-transparent right" src="images/scale0_computer.png" alt="A magnifying glass revealing a circuit board, wires spreading outward like a map">
 
 ---
 
