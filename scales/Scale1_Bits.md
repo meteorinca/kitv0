@@ -3,30 +3,24 @@
 > *One switch. ON or OFF. Our entire digital world is built on this simple concept.*
 
 <div style="text-align: center; margin: 2.5rem 0; padding: 3rem 1rem; background: var(--bg-elevated); border-radius: var(--radius-lg); border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-  <svg id="bulb" width="120" height="180" viewBox="0 0 100 150" style="transition: all 0.3s ease; fill: #d1d5db; stroke: #374151; stroke-width: 4;">
-    <path d="M50 10 C25 10 10 30 10 55 C10 75 25 90 35 110 L65 110 C75 90 90 75 90 55 C90 30 75 10 50 10 Z" />
-    <rect x="35" y="110" width="30" height="20" fill="#9ca3af" stroke="#374151" />
-    <path d="M40 130 L60 130 L55 145 L45 145 Z" fill="#4b5563" stroke="#374151" />
-  </svg>
+  <img id="circuit-img" src="images/circuitoff.png" alt="Circuit" style="max-width: 90%; width: 500px; display: block; margin: 0 auto; border-radius: 8px;">
   <br>
   <button onclick="
-    let b = document.getElementById('bulb');
+    let img = document.getElementById('circuit-img');
     let l = document.getElementById('bulb-label');
     let s = document.getElementById('bulb-state');
-    if(b.style.fill === 'rgb(253, 224, 71)' || b.style.fill === '#fde047') { 
-      b.style.fill = '#d1d5db'; 
-      b.style.filter = 'none';
+    if(img.src.includes('circuiton.png')) { 
+      img.src = 'scales/images/circuitoff.png'; 
       l.innerText = 'OFF';
       s.innerText = '0';
       s.style.color = 'var(--text-muted)';
     } else { 
-      b.style.fill = '#fde047'; 
-      b.style.filter = 'drop-shadow(0 0 25px rgba(253,224,71,0.8))';
+      img.src = 'scales/images/circuiton.png'; 
       l.innerText = 'ON';
       s.innerText = '1';
       s.style.color = 'var(--teal)';
     }
-  " style="margin-top: 2rem; padding: 12px 32px; font-size: 1.1rem; cursor: pointer; border-radius: 40px; border: 2px solid rgba(0,0,0,0.25); background: transparent; font-weight: 700; color: rgba(0,0,0,0.7); font-family: var(--font-sans); transition: all 0.2s;" onmouseover="this.style.background='rgba(0,0,0,0.05)'" onmouseout="this.style.background='transparent'">
+  " style="margin-top: 1rem; padding: 12px 32px; font-size: 1.1rem; cursor: pointer; border-radius: 40px; border: 2px solid rgba(0,0,0,0.25); background: transparent; font-weight: 700; color: rgba(0,0,0,0.7); font-family: var(--font-sans); transition: all 0.2s;" onmouseover="this.style.background='rgba(0,0,0,0.05)'" onmouseout="this.style.background='transparent'">
     Toggle Switch
   </button>
   <div style="margin-top: 1.5rem; font-family: var(--font-mono); font-size: 1.1rem; color: var(--text-secondary);">

@@ -127,12 +127,14 @@ To get binary to do math with big numbers, we needed lots of on/off switches. We
 
 This is where one of the most important inventions of all time comes in: the transistor! 
 
-<img class="big-transparent reverse" src="images/handtransistor.png" alt="A hand holding a transistor " style="filter: none;">
+<img src="images/handtransistor.png" alt="A hand holding a transistor" style="display: block; margin: 2rem auto; width: 70%; max-width: 600px; border: none; box-shadow: none; filter: none; animation: none;">
 
 It is a much fancier and much much smaller on/off switch. How small is it?
 
 In a modern smartphone, the transistors are 10,000 times smaller than a single strand of your hair!
 And there are more than 50 billion transistors on a chip the size of your fingernail!
+
+::video[How Small Is A Transistor?](videos/howsmallistransistor.mp4)
 
 ## Breadboard Exercise
 
@@ -148,18 +150,13 @@ What is it's algorithm?
 
 Hint: If I sees 1, I say 0. If I sees 0, I say 1.
 
-::youtube[Transistor Breadboard Demo](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+::youtube[Transistor Breadboard Demo](https://www.youtube.com/shorts/odx5NLbYz8g)
 </details>
 
 ---
 
-## ⚡ What Electromagnetism Has to Do With It
 
-Inside every computer chip, transistors act like tiny on/off switches. A transistor is about **5–7 nanometers** wide — roughly 10,000 times thinner than a human hair.
-
-A modern processor holds **over 10 billion** of them.
-
-Each transistor switches on or off using a tiny electrical charge. On = 1. Off = 0. Binary.
+Each transistor switches on or off using a tiny electrical charge. On = 1. Off = 0. This is the essence of **binary**.
 
 **The chain of scale:**
 
