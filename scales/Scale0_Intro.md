@@ -5,7 +5,7 @@
     img.big-animated {
         display: block;
         margin: 2rem auto;
-        max-width: 80%;
+        max-width: 50%;
         border-radius: 12px;
         box-shadow: 0 15px 35px rgba(0,0,0,0.1);
         animation: breathe-float 6s ease-in-out infinite;
@@ -13,7 +13,7 @@
     img.big-transparent {
         display: block;
         margin: 2rem auto;
-        max-width: 80%;
+        max-width: 50%;
         filter: drop-shadow(0 15px 20px rgba(0,0,0,0.15));
         animation: breathe-float 5.5s ease-in-out infinite;
     }
@@ -123,16 +123,11 @@ Read the written bits backward
 
 To get binary to do math with big numbers, we needed lots of on/off switches. We're talking millions, and eventually billions of them!
 
-
-<img class="big-transparent reverse" src="images/vactube.png" alt="A glowing antique vacuum tube — glass bulb with metal wires, the predecessor to the transistor">
-
 ## The invention of the transistor
 
 This is where one of the most important inventions of all time comes in: the transistor! 
 
-<img class="big-animated" src="images/transistor.jpg" alt="Transistor">
-
-<img class="big-transparent reverse" src="images/transistor.png" alt="A single crisp copper wire meeting a modern transistor — the switch that changed everything">
+<img class="big-transparent reverse" src="images/transistor.png" alt="A hand holding a transistor ">
 
 It is a much fancier and much much smaller on/off switch. How small is it?
 
