@@ -40,6 +40,12 @@
     landingEl.classList.remove('exit');
   });
 
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && landingEl.style.display !== 'none') {
+      window.enterCourse();
+    }
+  });
+
   // ── Init ─────────────────────────────────────────────────
   async function init() {
     try {
@@ -55,7 +61,7 @@
 
       const hash = window.location.hash.replace('#', '');
       const target =
-        scales.find(ch => s.id === hash) ||
+        scales.find(s => s.id === hash) ||
         scales[0];
 
       await loadScale(target.id);

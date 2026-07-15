@@ -44,7 +44,7 @@ We have to start from the ultimate question. What is the nature of the universe 
 According to our current understanding, there are 4 fundamental forces in the universe. Gravity, electromagnetism, the strong nuclear force, and the weak nuclear force. 
 
 
-<img class="big-transparent reverse" src="images/fourfources.png" alt="Four fundamental forces of the universe">
+<img class="big-transparent reverse" src="images/fourfources.png" alt="Four fundamental forces of the universe" style="max-width: 80%; width: 100%;">
 
 For our purposes, we are only concerned with the force of electromagnetism. 
 
@@ -68,7 +68,7 @@ Rub a balloon on your hair. Hold it near a thin stream of water from a tap. You 
 
 That bending is not magic (well, maybe a bit!) It is the same force (or field, depending on how you look at it) that runs every computer on Earth: **electromagnetism**.
 
-<img class="big-animated" src="images/waterballoon.jpg" alt="Charged Balloon deflecting a stream of water">
+<img class="big-animated" src="images/waterballoon.jpg" alt="Charged Balloon deflecting a stream of water" style="max-width: 80%; width: 100%;">
 
 The balloon steals electrons from your hair, becoming negatively charged. The water molecules, which are slightly positive on one side and negative on the other, are attracted to that charge (as seen in the image). An invisible force field reaches across space and bends a liquid. This is the universe’s fundamental messaging system: charge in motion.
 
@@ -127,7 +127,7 @@ To get binary to do math with big numbers, we needed lots of on/off switches. We
 
 This is where one of the most important inventions of all time comes in: the transistor! 
 
-<img class="big-transparent reverse" src="images/handtransistor.png" alt="A hand holding a transistor ">
+<img class="big-transparent reverse" src="images/handtransistor.png" alt="A hand holding a transistor " style="filter: none;">
 
 It is a much fancier and much much smaller on/off switch. How small is it?
 
@@ -135,6 +135,9 @@ In a modern smartphone, the transistors are 10,000 times smaller than a single s
 And there are more than 50 billion transistors on a chip the size of your fingernail!
 
 ## Breadboard Exercise
+
+<details>
+<summary><strong>Click here for the Optional Transistor Breadboard Exercise</strong></summary>
 
 Let's make a simple circuit on our breadboard to show that the on/off switch and transistors are the same.
 First wire up the board so you can control the LED with the button as shown.
@@ -145,19 +148,8 @@ What is it's algorithm?
 
 Hint: If I sees 1, I say 0. If I sees 0, I say 1.
 
-
-
-## 📖 The Substitute Teacher (What Is a Computer?)
-
-Imagine a substitute teacher walks into a class they know nothing about. They have no idea what the lesson is. But they have a **class manual** — a binder with step-by-step instructions.
-
-> *"If the class is quiet, say 'Thank you.' If a student raises a hand, call on them. If the bell rings, dismiss the class."*
-
-That substitute teacher is a CPU. The class manual is a program. The students are data.
-
-A computer is not smart. It follows a manual — precisely, obediently, incredibly fast. Every game, every website, every AI you've used was written as instructions in a manual that a "substitute teacher" followed, step by step, billions of times per second.
-
-<img class="big-transparent" src="images/scale0_computer.png" alt="A magnifying glass revealing a circuit board, wires spreading outward like a map">
+::youtube[Transistor Breadboard Demo](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+</details>
 
 ---
 
@@ -179,13 +171,27 @@ Each transistor switches on or off using a tiny electrical charge. On = 1. Off =
 | Microcontroller | ~3 cm chip | A full computer on one chip |
 | Your program | Invisible | Tells all of it what to do |
 
-A lightning bolt and a Google search use the same fundamental force. One is uncontrolled. One is choreographed at 5 GHz.
+A lightning bolt hitting the tower uses the same electromagnetic field as the one controlling the flow of electricity in your computer!
+
+<img class="big-transparent reverse" src="images/lightningtower.jpg" alt="A lightning bolt hitting a tower">
+
+---
+
+## 📖 The Substitute Teacher (What Is a Computer?)
+
+Imagine a substitute teacher walks into a class they know nothing about. They have no idea what the lesson is. But they have a **class manual** — a binder with step-by-step instructions.
+
+> *"If the class is quiet, say 'Thank you.' If a student raises a hand, call on them. If the bell rings, dismiss the class."*
+
+That substitute teacher is a CPU. The class manual is a program. The students are data.
+
+A computer is not smart. It follows a manual — precisely, obediently, incredibly fast. Every game, every website, every AI you've used was written as instructions in a manual that a "substitute teacher" followed, step by step, billions of times per second.
 
 ---
 
 ## 🛠 Guided Build: Your First Program in Plain English
 
-Before you write code, write logic. Here is a real program — in English:
+The following is an algorithm or program written in a form called pseudocode. Bascially in easy to understand english. It's kind of like a rough sketch or blueprint of a program. A computer can't read this, but a human (and now AI's*) can understand it perfectly.
 
 ```
 Start.
@@ -196,7 +202,17 @@ Wait 1 minute.
 Repeat.
 ```
 
-This is it. This is programming. Everything else — Python, JavaScript, C++ — is just a way to say this in a language a substitute teacher (the CPU) can read.
+Your body does that everytime you sweat:
+
+'''
+Start
+Check if body temperature is above 98.6°F
+  → YES: Turn the sweat glands on.
+  → NO: Keep the sweat glands off.
+Repeat.
+'''
+
+This is it. This is programming. Everything else — Python, JavaScript, C++ — is just a way to say this in a language the computer can understand.
 
 **Your turn:** Write a program in plain English that:
 1. Checks if it is past 9pm.
@@ -204,23 +220,11 @@ This is it. This is programming. Everything else — Python, JavaScript, C++ —
 3. If no: keeps them bright.
 4. Repeats every 10 minutes.
 
-There is no "wrong" answer yet. There is only clear thinking.
-
 ---
 
 ## 🎨 Remix Challenge
 
-Take your plain-English program and change one rule:
+Take your pseudocode and change one rule:
 - What if it checks *noise level* instead of *time*?
 - What if it controls *music volume* instead of *lights*?
 - What if it repeats every 1 second instead of 10 minutes?
-
-You just wrote three new programs. None required a keyboard. All required a brain.
-
----
-
-## Scale Comparison
-
-> One line of code you write → compiled into thousands of instructions → executed by billions of transistors → powered by electromagnetism → revealed by a bent stream of water from a balloon.
-
-*That is the scale of what you just started learning.*
