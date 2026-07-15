@@ -127,7 +127,7 @@ To get binary to do math with big numbers, we needed lots of on/off switches. We
 
 This is where one of the most important inventions of all time comes in: the transistor! 
 
-<img class="big-transparent reverse" src="images/transistor.png" alt="A hand holding a transistor ">
+<img class="big-transparent reverse" src="images/handtransistor.png" alt="A hand holding a transistor ">
 
 It is a much fancier and much much smaller on/off switch. How small is it?
 
